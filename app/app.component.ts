@@ -12,15 +12,19 @@ import { Animal } from './animal.model';
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div id="animals" *ngFor="let currentAnimal of masterAnimalList">
-        <h5>{{currentAnimal.name}}</h5>
-        Species: {{currentAnimal.species}}<br>
-        Age: {{currentAnimal.age}} y/o
+        <h1>Animals:</h1>
+        <div id="animals" (click)="selectedAnimalDetails(currentAnimal)" *ngFor="let currentAnimal of masterAnimalList">
+          <h5>{{currentAnimal.name}}</h5>
+          Species: {{currentAnimal.species}}<br>
+          Age: {{currentAnimal.age}} y/o
         </div>
       </div>
-      <div id="add-edit-detail" class="col-md-4">
+      <div id="info" class="col-md-4">
+        <h1>Info:</h1>
         <button class="btn btn-sm" (click)="animalFormShow()">Add An Animal</button>
         <add-animal *ngIf="animalForm === true" (newAnimalSender)="addAnimal($event)" (animalFormHide)="cancelForm()"></add-animal>
+        <animal-details *ngIf="animalDetails" [childSelectedAnimal]="animalDetails"  (hideButtonClickedSender)="hideDetails()" (updateButtonClickedSender)="updateAnimal()">
+        </animal-details>
       </div>
     </div>
   </div>
@@ -29,6 +33,8 @@ import { Animal } from './animal.model';
 
 export class AppComponent {
   animalForm: boolean = false;
+  animalDetails = null;
+  selectedAnimal = null;
 
   masterAnimalList: Animal[] = [
     new Animal('Thunder Lion', 'Zeus', 13, 'Carnivore', 'Mt. Olympus', 3, 'Male', 'Being the center of attention', 'Signs of disrespect'),
@@ -38,6 +44,10 @@ export class AppComponent {
     new Animal('Red-Crested Breegul', 'Kazooie', 9, 'Omnivore', 'Spiral Mountain', 2, 'Female', 'Insulting people', 'Most things'),
     new Animal('Twilight Wolf', 'Link', 5, 'Carnivore', 'Hyrule', 3, 'Male', 'Acts of courage', 'Talking')
   ];
+
+  hideDetails() {
+    this.animalDetails = null;
+  }
 
   animalFormShow() {
     this.animalForm = true;
@@ -50,5 +60,9 @@ export class AppComponent {
   addAnimal(newAnimal) {
     this.animalForm = false;
     this.masterAnimalList.push(newAnimal)
+  }
+
+  selectedAnimalDetails(animalToView: Animal) {
+    this.animalDetails = animalToView;
   }
 }
