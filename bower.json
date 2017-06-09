@@ -1,0 +1,20 @@
+{
+  "name": "zoo-tracker",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Steven Galvin <steven.john.galvin@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
