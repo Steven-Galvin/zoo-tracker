@@ -16,11 +16,20 @@ import { Animal } from './animal.model';
     <label>Diet:</label>
     <input class="form-control" #newDiet><br>
     <label>Location:</label>
-    <input class="form-control" #newLocation><br>
+    <select class="form-control" #newLocation>
+      <option value="Spiral Mountain" selected>Spiral Mountain</option>
+      <option value="Shipwreck Creek">Shipwreck Creek</option>
+      <option value="Mt. Olympus">Mt. Olympus</option>
+      <option value="Hyrule">Hyrule</option>
+      <option value="Undetermined">Undetermined</option>
+    </select><br>
     <label>Number of Caretakers:</label>
     <input type="number" class="form-control" #newCaretakers><br>
     <label>Sex:</label>
-    <input class="form-control" #newSex><br>
+    <select class="form-control" #newSex>
+      <option value="Male" selected>Male</option>
+      <option value="Female">Female</option>
+    </select><br>
     <label>Likes:</label>
     <input class="form-control" #newLikes><br>
     <label>Dislikes:</label>

@@ -11,7 +11,7 @@ import { Animal } from './animal.model';
         <label>Update Name:</label>
         <input class="form-control" [(ngModel)]="childSelectedAnimal.name"><br>
         <label>Update Age:</label>
-        <input class="form-control" [(ngModel)]="childSelectedAnimal.age"><br>
+        <input type="number" class="form-control" [(ngModel)]="childSelectedAnimal.age"><br>
         <label>Update Number of Caretakers:</label>
         <input class="form-control" [(ngModel)]="childSelectedAnimal.caretakers"><br>
         <button class="btn btn-sm" (click)="updateButtonClicked()">Update Changes</button>

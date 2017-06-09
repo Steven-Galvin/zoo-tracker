@@ -12,8 +12,21 @@ import { Animal } from './animal.model';
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>Animals:</h1>
-        <div id="animals" (click)="selectedAnimalDetails(currentAnimal)" *ngFor="let currentAnimal of masterAnimalList">
+        <select class="form-control" id="select" (change)="onChange($event.target.value)">
+          <option value="allAnimals" selected="selected">All Animals</option>
+          <option value="youngins">Youngins</option>
+          <option value="veterans">Veterans</option>
+          <option value="male">Males</option>
+          <option value="female">Females</option>
+        </select>
+        <select class="form-control" id="select2" (change)="onChange($event.target.value)">
+          <option value="allLocations" selected="selected">All Locations</option>
+          <option value="mtOlympus">Mt. Olympus</option>
+          <option value="hyrule">Hyrule</option>
+          <option value="shipwreckCreek">Shipwreck Creek</option>
+          <option value="spiralMountain">Spiral Mountain</option>
+        </select>
+        <div id="animals" (click)="selectedAnimalDetails(currentAnimal)" *ngFor="let currentAnimal of masterAnimalList | sort:filterAnimals | sortLocation:filterLocations">
           <h5>{{currentAnimal.name}}</h5>
           Species: {{currentAnimal.species}}<br>
           Age: {{currentAnimal.age}} y/o
@@ -35,6 +48,8 @@ export class AppComponent {
   animalForm: boolean = false;
   animalDetails = null;
   selectedAnimal = null;
+  filterAnimals: string = "allAnimals";
+  filterLocations: string = "allLocations";
 
   masterAnimalList: Animal[] = [
     new Animal('Thunder Lion', 'Zeus', 13, 'Carnivore', 'Mt. Olympus', 3, 'Male', 'Being the center of attention', 'Signs of disrespect'),
@@ -44,6 +59,11 @@ export class AppComponent {
     new Animal('Red-Crested Breegul', 'Kazooie', 9, 'Omnivore', 'Spiral Mountain', 2, 'Female', 'Insulting people', 'Most things'),
     new Animal('Twilight Wolf', 'Link', 5, 'Carnivore', 'Hyrule', 3, 'Male', 'Acts of courage', 'Talking')
   ];
+
+  onChange(menuOption) {
+    this.filterLocations = menuOption
+    this.filterAnimals = menuOption
+}
 
   hideDetails() {
     this.animalDetails = null;

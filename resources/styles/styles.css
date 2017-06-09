@@ -18,6 +18,10 @@ button:hover {
   background-color: #AD8262;
 }
 
+.removeBlock {
+  display: inline;
+}
+
 .jumbotron {
   border-bottom: 3px solid rgba(0, 0, 0, 0.8);
   margin-bottom: 0px;
@@ -27,6 +31,11 @@ button:hover {
   background-position: center;
   color: white;
   text-shadow: 4px 4px 4px black;
+}
+
+#select, #select2 {
+  width: 93%;
+  margin-top: 10px;
 }
 
 #animals {
@@ -50,8 +59,8 @@ button:hover {
 }
 
 #info {
+  margin-top: 10px;
   background-color: #909c8c;
   padding: 0px 10px 10px 10px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  border-top: none;
 }
