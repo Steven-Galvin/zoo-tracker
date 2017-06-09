@@ -1,16 +1,23 @@
+$back: #b5c4af;
+$shadow: rgba(0, 0, 0, 0.5);
+$jumboShadow: rgba(0, 0, 0, 0.8);
+$defaultLight: #ebebea;
+$defaultDark: #161616;
+
 body {
-  background-color: #b5c4af;
+  background-color: $back;
+  color: $defaultDark;
 }
 
 hr {
-  border-color: rgba(0, 0, 0, 0.5);
+  border-color: $shadow;
 }
 
 button {
   background-color: #8a684e;
-  color: #ebebea;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: $defaultLight;
+  text-shadow: 1px 1px 3px $shadow;
+  box-shadow: 1px 1px 3px $shadow;
 }
 
 button:hover {
@@ -23,14 +30,14 @@ button:hover {
 }
 
 .jumbotron {
-  border-bottom: 3px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 3px solid $jumboShadow;
   margin-bottom: 0px;
   background-image: url(./../images/header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: #ebebea;
-  text-shadow: 4px 4px 4px #161616;
+  color: $defaultLight;
+  text-shadow: 4px 4px 4px $defaultDark;
 }
 
 #select, #select2 {
@@ -44,16 +51,16 @@ button:hover {
   padding: 7px;
   margin: 10px 10px 10px 0px;
   width: 30%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid $shadow;
   border-radius: 5px;
   display: inline-block;
   min-height: 20%;
-  box-shadow: 1px 1px 3px #161616;
+  box-shadow: 1px 1px 3px $defaultDark;
 }
 
 #animals:hover {
   transition: background-color 0.6s ease, color 0.6s ease;
-  color: #ebebea;
+  color: $defaultLight;
   background-color: #9c938e;
   cursor: pointer;
 }
@@ -62,5 +69,5 @@ button:hover {
   margin-top: 10px;
   background-color: #909c8c;
   padding: 0px 10px 10px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid $shadow;
 }
