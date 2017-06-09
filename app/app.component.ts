@@ -35,9 +35,8 @@ import { Animal } from './animal.model';
       <div id="info" class="col-md-4">
         <h1>Info:</h1>
         <button class="btn btn-sm" (click)="animalFormShow()">Add An Animal</button>
+        <animal-details *ngIf="animalDetails" [childSelectedAnimal]="animalDetails"  (hideButtonClickedSender)="hideDetails()" (updateButtonClickedSender)="updateAnimal()"></animal-details>
         <add-animal *ngIf="animalForm === true" (newAnimalSender)="addAnimal($event)" (animalFormHide)="cancelForm()"></add-animal>
-        <animal-details *ngIf="animalDetails" [childSelectedAnimal]="animalDetails"  (hideButtonClickedSender)="hideDetails()" (updateButtonClickedSender)="updateAnimal()">
-        </animal-details>
       </div>
     </div>
   </div>

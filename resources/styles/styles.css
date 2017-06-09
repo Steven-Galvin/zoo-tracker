@@ -1,5 +1,10 @@
 body {
   background-color: #b5c4af;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
 }
 
 hr {
