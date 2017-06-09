@@ -1,5 +1,6 @@
 # Zoo Tracker
 ### Steven Galvin, June 9th, 2017
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=plastic)](https://github.com/steven-galvin/zoo-tracker)
 
 This web app was made primarily with Typescript and Angular 2. It's purpose is to show off my week three knowledge from Epicodus and my efficiency with TS and Ang2. This zoo tracker is a simple app designed to give the user the ability to create animals in a zoo with certain properties(species, name, diet, age, etc.). It gives the user the ability to sort the animals by certain parameters, add new animals, and edit existing ones.
 
