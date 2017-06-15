@@ -6,14 +6,16 @@ import { Animal } from './animal.model';
   template: `
   <hr>
   <h3>{{childSelectedAnimal.name}} Details:</h3>
-  <h5>Species: {{childSelectedAnimal.species}}</h5>
-  <h5>Age: {{childSelectedAnimal.age}} y/o</h5>
-  <h5>Diet: {{childSelectedAnimal.diet}}</h5>
-  <h5>Location: {{childSelectedAnimal.location}}</h5>
-  <h5>Number of Caretakers: {{childSelectedAnimal.caretakers}}</h5>
-  <h5>Sex: {{childSelectedAnimal.sex}}</h5>
-  <h5>Likes: {{childSelectedAnimal.likes}}</h5>
-  <h5>Dislikes: {{childSelectedAnimal.dislikes}}</h5>
+  <img src="{{childSelectedAnimal.image}}"/><br>
+  <em>{{childSelectedAnimal.description}}</em><hr>
+  <strong>Species: {{childSelectedAnimal.species}}</strong><br>
+  <strong>Age: {{childSelectedAnimal.age}} y/o</strong><br>
+  <strong>Diet: {{childSelectedAnimal.diet}}</strong><br>
+  <strong>Location: {{childSelectedAnimal.location}}</strong><br>
+  <strong>Number of Caretakers: {{childSelectedAnimal.caretakers}}</strong><br>
+  <strong>Sex: {{childSelectedAnimal.sex}}</strong><br>
+  <strong>Likes: {{childSelectedAnimal.likes}}</strong><br>
+  <strong>Dislikes: {{childSelectedAnimal.dislikes}}</strong><br>
   <button class="btn btn-sm" (click)="hideButtonClicked()">Hide Details</button>
   <button class="btn btn-sm" (click)="editAnimal(childSelectedAnimal)">Edit Details</button>
   <edit-animal *ngIf="updateForm === true" [childSelectedAnimal]="selectedAnimal" (updateButtonClickedSender)="finishedEdit()"></edit-animal>
