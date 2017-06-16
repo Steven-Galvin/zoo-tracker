@@ -14,7 +14,7 @@ import { Animal } from './animal.model';
     <label>Age:</label>
     <input type="number" class="form-control" #newAge><br>
     <label>Description:</label>
-    <input id="text-area" class="form-control" #newDescription><br>
+    <textarea class="form-control" #newDescription></textarea><br>
     <label>Temperament:</label>
     <input class="form-control" #newTemperament><br>
     <label>Diet:</label>

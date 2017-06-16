@@ -6,16 +6,26 @@ import { Animal } from './animal.model';
   template: `
   <hr>
   <h3>{{childSelectedAnimal.name}} Details:</h3>
-  <img src="{{childSelectedAnimal.image}}"/><br>
+  <img src="{{childSelectedAnimal.image}}"/>
+  <br>
   <em>{{childSelectedAnimal.description}}</em><hr>
-  <strong>Species: {{childSelectedAnimal.species}}</strong><br>
-  <strong>Age: {{childSelectedAnimal.age}} y/o</strong><br>
-  <strong>Diet: {{childSelectedAnimal.diet}}</strong><br>
-  <strong>Location: {{childSelectedAnimal.location}}</strong><br>
-  <strong>Number of Caretakers: {{childSelectedAnimal.caretakers}}</strong><br>
-  <strong>Sex: {{childSelectedAnimal.sex}}</strong><br>
-  <strong>Likes: {{childSelectedAnimal.likes}}</strong><br>
-  <strong>Dislikes: {{childSelectedAnimal.dislikes}}</strong><br>
+  <strong>Species:</strong> {{childSelectedAnimal.species}}
+  <br>
+  <strong>Age:</strong> {{childSelectedAnimal.age}} y/o
+  <br>
+  <strong>Diet:</strong> {{childSelectedAnimal.diet}}
+  <br>
+  <strong>Location:</strong> {{childSelectedAnimal.location}}
+  <br>
+  <strong>Number of Caretakers:</strong> {{childSelectedAnimal.caretakers}}
+  <br>
+  <strong>Sex:</strong> {{childSelectedAnimal.sex}}
+  <br>
+  <strong>Likes:</strong> {{childSelectedAnimal.likes}}
+  <br>
+  <strong>Dislikes:</strong> {{childSelectedAnimal.dislikes}}
+  <br>
+  <br>
   <button class="btn btn-sm" (click)="hideButtonClicked()">Hide Details</button>
   <button class="btn btn-sm" (click)="editAnimal(childSelectedAnimal)">Edit Details</button>
   <edit-animal *ngIf="updateForm === true" [childSelectedAnimal]="selectedAnimal" (updateButtonClickedSender)="finishedEdit()"></edit-animal>
